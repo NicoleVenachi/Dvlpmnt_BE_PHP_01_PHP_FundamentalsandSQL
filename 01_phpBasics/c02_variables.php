@@ -1,5 +1,6 @@
 <?php 
 
+  // ***variables***
   // strings
   $name = 'Carlos';
   echo $name;
@@ -23,4 +24,10 @@
 
   echo gettype($name); // string
 
+  // ***constants***
+  define('HOST', 'localhost');
+  echo HOST;
+
+  define('PI', 3.14);
+  echo PI;
 ?>
