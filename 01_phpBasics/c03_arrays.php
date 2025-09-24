@@ -32,4 +32,7 @@
   echo $matrix[1][2] . '<br />'; // Outputs "6"
   echo $matrix2[2][2] . '<br />'; 
 
+  // Counting array elements
+  $months = ["January", "February", "March"];
+  echo count($months) . '<br />'; // Outputs "3"
 ?>
