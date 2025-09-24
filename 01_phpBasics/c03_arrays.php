@@ -17,4 +17,19 @@
 
   $person['first_name'] = "Jane"; // Modifying value
   echo $person["first_name"] . '<br />'; // Outputs "John"
+
+  // Multidimensional arrays
+  $matrix = array(
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+  );
+  $matrix2 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
+  echo $matrix[1][2] . '<br />'; // Outputs "6"
+  echo $matrix2[2][2] . '<br />'; 
+
 ?>
