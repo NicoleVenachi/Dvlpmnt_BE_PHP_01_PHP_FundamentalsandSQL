@@ -39,5 +39,16 @@
   foreach($alexander as $key => $value) {
     echo "$key : $value <br>";
   }
+
+  // *** break and continue ***
+  $countries = ["USA", "Canada", "UK", "Col", "France", "Germany", "Italy", "Spain"];
+  foreach($countries as $country) {
+    if ($country == "Germany") {
+      break; // exit the loop
+    } elseif ($country == "UK") {
+      continue; // skip the current iteration
+    }
+    echo "$country <br>";
+  }
 ?>
 
