@@ -22,4 +22,11 @@
     echo $months[$counter] . "<br>";
     $counter++;
   }
+
+  // *** do while Loop ***
+  $k = 1;
+  do {
+    echo "The number is: $k <br>";
+    $k++;
+  } while ($k <= 10); 
 ?>
