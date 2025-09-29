@@ -36,3 +36,22 @@
   $months = ["January", "February", "March"];
   echo count($months) . '<br />'; // Outputs "3"
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year months</title>
+</head>
+<body>
+  <h1>Year months</h1>
+  <ul>
+    <?php 
+     foreach($months as $month) {
+      echo "<li>$month</li>";
+     }
+    ?>
+  </ul>
+</body>
+</html>
