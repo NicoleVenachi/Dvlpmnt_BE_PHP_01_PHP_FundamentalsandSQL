@@ -33,8 +33,15 @@
   echo $matrix2[2][2] . '<br />'; 
 
   // Counting array elements
-  $months = ["January", "February", "March"];
+  $months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   echo count($months) . '<br />'; // Outputs "3"
+  $firstNumbers = [1, 2, 3, 4, 5];
+
+  // Sorting arrays
+  // sort($months); // Sorts in ascending order
+  rsort($months); // Sorts in descending order
+  sort($firstNumbers);
+  // rsort($firstNumbers);
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +57,15 @@
     <?php 
      foreach($months as $month) {
       echo "<li>$month</li>";
+     }
+    ?>
+  </ul>
+
+  <h1>Numbers</h1>
+  <ul>
+    <?php 
+     foreach($firstNumbers as $number) {
+      echo "<li>$number</li>";
      }
     ?>
   </ul>
