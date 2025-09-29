@@ -37,4 +37,8 @@
     default:
       echo "<h2>Invalid day</h2>";
   }
+
+  // ***ternary operator***
+  $is_logged_in = !isset($age) ? "<h3>Welcome back, user!</h3>" : "<h3>Please log in.</h3>";
+  echo $is_logged_in;
 ?>
