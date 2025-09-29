@@ -29,4 +29,15 @@
     echo "The number is: $k <br>";
     $k++;
   } while ($k <= 10); 
+
+  // *** foreach Loop (on asociative arrays) ***
+  $alexander = array(
+    "first_name" => "Alexander",
+    "last_name" => "Hamilton",
+    "age" => 30
+  );
+  foreach($alexander as $key => $value) {
+    echo "$key : $value <br>";
+  }
 ?>
+
