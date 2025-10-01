@@ -24,6 +24,7 @@
   var_dump($asociativeArray);
   echo "</pre>";
 
+  // *** print_r ***
   echo "<pre>";
   print_r($array);
   echo "</pre>";
