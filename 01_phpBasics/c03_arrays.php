@@ -32,6 +32,7 @@
   echo $matrix[1][2] . '<br />'; // Outputs "6"
   echo $matrix2[2][2] . '<br />'; 
 
+  // *** Array built in methods ***
   // Counting array elements
   $months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   echo count($months) . '<br />'; // Outputs "3"
@@ -42,6 +43,20 @@
   rsort($months); // Sorts in descending order
   sort($firstNumbers);
   // rsort($firstNumbers);
+
+  // Extracts variables from associative array
+  echo extract($person); 
+  echo $first_name . '<br />'; // Outputs "Jane"
+
+  // Remove last element
+  $lastNumber = array_pop($firstNumbers); // Removes the last element
+  echo $lastNumber . '<br />'; // Outputs "5"
+
+   // Joins array elements into a string
+  echo join(", ", $firstNumbers);
+
+  $weekdays_reversed = array_reverse($weekdays);
+  echo '<br />' . join(", ", $weekdays_reversed);
 ?>
 
 <!DOCTYPE html>
