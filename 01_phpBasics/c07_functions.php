@@ -11,3 +11,4 @@
   }
   echo triangleArea(10, 5); // Outputs: 25
 ?>
+
