@@ -1,3 +1,25 @@
+<?php 
+
+  if($_POST) {
+    extract($_POST);
+    // $name = $_POST['name'];
+  }
+  if ($_GET) {
+    extract($_GET);
+  }
+  if(isset($name) && isset($gender) && isset($terms)) {
+    // header("Location: c01_basicForm.php");
+
+    print_r($_POST);
+    echo "<br>";
+    print_r($_GET);
+    echo "<br>";
+    echo htmlspecialchars("Hello $name, you are a $gender and you were born in $year. You accepted the terms? $terms");
+  }
+
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +29,11 @@
 </head>
 <body>
   <!-- <form action="receive.php" method="post"> -->
-  <form action="receive.php" method="get">
+  <!-- <form action="receive.php" method="get"> -->
+  <!-- <form action="#" method="get"> -->
+  <!-- <form action="" method="get"> -->
+  <!-- <form action="c01_basicForm.php" method="get"> -->
+  <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="get">
     <input type="text" name="name" placeholder="Type your name">
     <br>
 
