@@ -6,7 +6,7 @@
   <title>Forms</title>
 </head>
 <body>
-  <form action="receive.php" method="">
+  <form action="receive.php" method="post">
     <input type="text" name="name" placeholder="Type your name">
     <br>
 
@@ -29,7 +29,7 @@
     <br>
 
     <label for="terms">Accept</label>
-    <input type="checkbox" name="terms" id="terms" value="Accept terms">
+    <input type="checkbox" name="terms" id="terms" value="True">
 
     <br>
     <input type="submit" value="Send">
