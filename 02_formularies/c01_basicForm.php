@@ -6,7 +6,8 @@
   <title>Forms</title>
 </head>
 <body>
-  <form action="receive.php" method="post">
+  <!-- <form action="receive.php" method="post"> -->
+  <form action="receive.php" method="get">
     <input type="text" name="name" placeholder="Type your name">
     <br>
 
