@@ -17,10 +17,16 @@
   <div class="wrap">
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 
-      <input type="text" class="form-control" name="name" value="" placeholder="Name:">
-      <input type="email" class="form-control" name="email" value="" placeholder="Email:">
+      <input type="text" class="form-control" name="name" value="<?php
+        if(!$sent && isset($name)) echo $name
+      ?>" placeholder="Name:">
+      <input type="email" class="form-control" name="email" value="<?php
+        if(!$sent && isset($email)) echo $email
+      ?>" placeholder="Email:">
 
-      <textarea name="message" id="message" class="form-control" placeholder="Message....."></textarea>
+      <textarea name="message" id="message" class="form-control" placeholder="Message....."><?php
+        if(!$sent && isset($message)) echo $message
+      ?></textarea>
 
       <?php if (!empty($errors)): ?>
         <div class="alert error">
