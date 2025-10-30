@@ -7,10 +7,20 @@
     die("Sorry, inner server error". $connection->connect_error); 
   }; // Should print 0 if connection is successful
 
+
+  // Inserting records
+  $insertQuery = "INSERT INTO users(id, name, email) VALUES(null, 'Daniel', 'daniel@gmail.com')";
+  $connection->query($insertQuery);
+  if ($connection->affected_rows > 0) {
+    echo "Record inserted successfully. New ID: " . $connection->insert_id . '<br />';
+  }
+
+
+
   // Simple Query Execution
-  // $sqlQuery = 'SELECT * FROM users LIMIT 3';
-  $id = isset($_GET["id"]) ? $_GET["id"]: 1;
-  $sqlQuery = "SELECT * FROM users WHERE id = $id"; // Query Injection example
+  $sqlQuery = 'SELECT * FROM users LIMIT 3';
+  // $id = isset($_GET["id"]) ? $_GET["id"]: 1;
+  // $sqlQuery = "SELECT * FROM users WHERE id = $id"; // Query Injection example
   $results = $connection->query($sqlQuery);
   if ($results->num_rows > 0) {
     // echo $results->num_rows;
@@ -24,6 +34,7 @@
       echo $row['name'] . ' - ' . $row['email'] . '<br />';
     }
   } 
+
 
 
 ?>
