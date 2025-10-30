@@ -9,11 +9,11 @@
 
 
   // Inserting records
-  $insertQuery = "INSERT INTO users(id, name, email) VALUES(null, 'Daniel', 'daniel@gmail.com')";
-  $connection->query($insertQuery);
-  if ($connection->affected_rows > 0) {
-    echo "Record inserted successfully. New ID: " . $connection->insert_id . '<br />';
-  }
+  // $insertQuery = "INSERT INTO users(id, name, email) VALUES(null, 'Daniel', 'daniel@gmail.com')";
+  // $connection->query($insertQuery);
+  // if ($connection->affected_rows > 0) {
+  //   echo "Record inserted successfully. New ID: " . $connection->insert_id . '<br />';
+  // }
 
 
 
@@ -36,5 +36,20 @@
   } 
 
 
+  // Prepared Statements to prevent SQL Injection
+  $id = '3'; // Query Injection example
+  $name = $_GET["name"] ?? 'Michel';
+  $email = $_GET["email"] ?? 'michel@gmail.com';
+
+  $insertQuery = "INSERT INTO users(id, name, email) VALUES(null, ?, ?)";
+  
+  $statement = $connection->prepare($insertQuery);
+  $statement->bind_param("ss", $name, $email);
+
+  $statement->execute();
+
+  if ($connection->affected_rows > 0) {
+    echo "Record inserted successfully: " . $connection->affected_rows . '<br />';
+  }
 
 ?>
