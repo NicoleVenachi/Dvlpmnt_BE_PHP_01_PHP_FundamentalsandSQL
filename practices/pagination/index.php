@@ -16,6 +16,24 @@
   }
 
   $pagina = (int)($_GET['page'] ?? 1);
-  $postPerPage = 5;
+  $postsPerPage = 5;
+  $start = ($pagina >1) ? (($pagina * $postsPerPage) - $postsPerPage) : 0;
 
+  $articles = $connection->prepare("
+  SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT $start, $postsPerPage
+  "); 
+  $articles->execute();
+  $articulos = $articles->fetchAll();
+
+  if (empty($articulos)) {
+    header("Location: index.php?page=1");
+  }
+
+  $totalArticles = $connection->query("SELECT FOUND_ROWS() as total");
+  $totalArticles = $totalArticles->fetchColumn(0);
+
+  $numeroPaginas = ceil($totalArticles / $postsPerPage);
+  // echo' '. $totalArticles .'';
+  // echo' '. $numeroPaginas .'';
+  require 'index.view.php';
 ?>

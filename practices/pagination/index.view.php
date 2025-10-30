@@ -13,7 +13,7 @@
 		<section class="articulos">
 			<ul>
 				<?php foreach ($articulos as $articulo): ?>
-					<li><?php echo $articulo['id'] . '.- ' . $articulo['articulo']; ?></li>
+					<li><?php echo $articulo['id'] . '.- ' . $articulo['article']; ?></li>
 				<?php endforeach; ?>
 			</ul>
 		</section>
