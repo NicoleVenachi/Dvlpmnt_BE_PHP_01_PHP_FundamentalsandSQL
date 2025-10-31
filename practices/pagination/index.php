@@ -15,7 +15,7 @@
     die();
   }
 
-  $pagina = (int)($_GET['page'] ?? 1);
+  $pagina = (int)($_GET['pagina'] ?? 1);
   $postsPerPage = 5;
   $start = ($pagina >1) ? (($pagina * $postsPerPage) - $postsPerPage) : 0;
 
@@ -26,7 +26,7 @@
   $articulos = $articles->fetchAll();
 
   if (empty($articulos)) {
-    header("Location: index.php?page=1");
+    header("Location: index.php");
   }
 
   $totalArticles = $connection->query("SELECT FOUND_ROWS() as total");
